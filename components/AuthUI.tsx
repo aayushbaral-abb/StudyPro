@@ -101,8 +101,10 @@ const AuthUI: React.FC = () => {
               <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
             </div>
             <span className="text-3xl font-black text-white tracking-tighter">StudyPro</span>
+            
           </div>
           <h1 className="text-6xl font-black text-white leading-[1.1] mb-6">Master your academic <span className="text-indigo-200">journey.</span></h1>
+          <p className="text-xl text-indigo-100 max-w-md font-medium leading-relaxed">The all-in-one student workspace to track courses and visualize your study progress.</p>
         </div>
       </div>
 
@@ -114,15 +116,15 @@ const AuthUI: React.FC = () => {
                 {isForgotPassword ? 'Reset Password' : isLogin ? 'Welcome Back' : 'Get Started'}
              </h2>
              <p className="text-gray-500 font-medium">
-                {isForgotPassword ? 'Enter your email to receive a recovery link.' : isLogin ? 'Login to continue your studies.' : 'Create ypur profile.'}
+                {isForgotPassword ? 'Enter your email to receive a recovery link.' : isLogin ? 'Login to continue your studies.' : 'Create your new profile.'}
              </p>
           </div>
 
           <form onSubmit={handleAuth} className="space-y-6">
             {!isLogin && !isForgotPassword && (
               <div className="space-y-2">
-                <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest px-1">Full Name</label>
-                <input type="text" required className="w-full border-2 border-gray-100 bg-gray-50 rounded-2xl px-6 py-4 focus:bg-white focus:border-indigo-500 outline-none transition font-bold text-gray-800" placeholder="Username" value={fullName} onChange={(e) => setFullName(e.target.value)} />
+                <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest px-1">UserName</label>
+                <input type="text" required className="w-full border-2 border-gray-100 bg-gray-50 rounded-2xl px-6 py-4 focus:bg-white focus:border-indigo-500 outline-none transition font-bold text-gray-800" placeholder="Full name" value={fullName} onChange={(e) => setFullName(e.target.value)} />
               </div>
             )}
             
