@@ -1,0 +1,8 @@
+{
+  "name": "Student Study Tracker Pro",
+  "description": "A comprehensive study management application for students to track daily progress across multiple courses, subjects, and media types with Supabase backend integration.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
