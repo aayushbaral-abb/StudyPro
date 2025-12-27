@@ -1,0 +1,27 @@
+name: Keep Supabase Awake
+
+on:
+  schedule:
+    - cron: "0 */2 * * *"   # every 2 hours
+  workflow_dispatch: {}       # allow manual run
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase (Debug)
+        run: |
+          echo "Calling: $SUPABASE_URL/rest/v1/"
+          response=$(curl -s -w "\n%{http_code}" \
+            -H "apikey: $SUPABASE_ANON_KEY" \
+            "$SUPABASE_URL/rest/v1/")
+          
+          body=$(echo "$response" | sed '$d')
+          status=$(echo "$response" | tail -n1)
+
+          echo "HTTP Status: $status"
+          echo "Response Body: $body"
+
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
