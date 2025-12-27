@@ -114,14 +114,14 @@ const AuthUI: React.FC = () => {
                 {isForgotPassword ? 'Reset Password' : isLogin ? 'Welcome Back' : 'Get Started'}
              </h2>
              <p className="text-gray-500 font-medium">
-                {isForgotPassword ? 'Enter your email to receive a recovery link.' : isLogin ? 'Login to continue your studies.' : 'Create a new student profile.'}
+                {isForgotPassword ? 'Enter your email to receive a recovery link.' : isLogin ? 'Login to continue your studies.' : 'Create ypur profile.'}
              </p>
           </div>
 
           <form onSubmit={handleAuth} className="space-y-6">
             {!isLogin && !isForgotPassword && (
               <div className="space-y-2">
-                <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest px-1">Student Full Name</label>
+                <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest px-1">Full Name</label>
                 <input type="text" required className="w-full border-2 border-gray-100 bg-gray-50 rounded-2xl px-6 py-4 focus:bg-white focus:border-indigo-500 outline-none transition font-bold text-gray-800" placeholder="Username" value={fullName} onChange={(e) => setFullName(e.target.value)} />
               </div>
             )}
